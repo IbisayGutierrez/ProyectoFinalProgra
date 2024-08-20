@@ -4,6 +4,8 @@
  */
 package Personas;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Erick Rodriguez Al
@@ -11,34 +13,33 @@ package Personas;
 public class Empleado extends Persona {
     private String puesto;
     private double salario;
+    private puestoEmpleado puestoEmpleado;
 
-    
-    public void actualizarSalario(double nuevoSalario) {
-        this.salario = nuevoSalario;
-    }
 
     public String getPuesto() {
-        return puesto;
-    }
-
-    public void setPuesto(String puesto) {
-        this.puesto = puesto;
+        return puestoEmpleado.getPuesto();
     }
 
     public double getSalario() {
-        return salario;
+        return puestoEmpleado.getSalario();
+    }
+   
+
+    public void setPuestoEmpleado(puestoEmpleado puestoEmpleado) {
+        this.puestoEmpleado = puestoEmpleado;
+    }
+    public Empleado(String identificacion, String nombre, LocalDate fechaNacimiento, String telefono, String correo, puestoEmpleado puestoEmpleado) {
+        super(identificacion, nombre, fechaNacimiento, telefono, correo);
+        this.puestoEmpleado = puestoEmpleado;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                super.toString() +
+                ", puesto='" + puestoEmpleado.getPuesto() + '\'' +
+                ", salario=" + puestoEmpleado.getSalario() +
+                '}';
     }
-    
-    public enum PuestoEmpleado {
-    ADMINISTRATIVO,
-    REPARTIDOR,
-    GERENTE
-}
-
-    
 }
 

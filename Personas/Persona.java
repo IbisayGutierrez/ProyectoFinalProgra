@@ -57,6 +57,7 @@ public abstract class Persona {
     }
 
     public Persona() {
+        this("","",LocalDate.now(),"","");
     }
     
     

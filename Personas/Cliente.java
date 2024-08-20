@@ -14,18 +14,12 @@ import java.time.Period;
 public class Cliente extends Persona {
     private int edad;
 
-    public void calcularEdad() {
+    public int getEdad() {
+        return edad;
+    }
+ public void calcularEdad() {
         if (getFechaNacimiento() != null) {
             this.edad = Period.between(getFechaNacimiento(), LocalDate.now()).getYears();
         }
     }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-    
 }
