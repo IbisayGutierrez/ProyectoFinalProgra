@@ -4,6 +4,7 @@
  */
 package Envios;
 
+import Paquetes.Paquete;
 import Personas.Cliente;
 import java.time.LocalDate;
 
@@ -63,8 +64,6 @@ public class Envio {
         this.estado = estado;
     }
     
-    
- 
 
     public Envio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega) {
         this.numeroEnvio = contador++;

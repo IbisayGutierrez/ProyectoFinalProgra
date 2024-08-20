@@ -4,6 +4,7 @@
  */
 package Envios;
 
+import Paquetes.Paquete;
 import Personas.Cliente;
 import java.time.LocalDate;
 import java.util.ArrayList;
