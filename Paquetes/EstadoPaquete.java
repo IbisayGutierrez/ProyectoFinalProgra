@@ -13,6 +13,7 @@ public enum EstadoPaquete {
     ENCLASIFICACION,
     ENTRANSITO,
     ENTREGADO,
-    DEVUELTO;
+    DEVUELTO,
+    CANCELADO;
 }
 

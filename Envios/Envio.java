@@ -65,7 +65,7 @@ public class Envio {
     }
     
 
-    public Envio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega) {
+    public Envio(int par, Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega, double precio1, EstadoEnvio EN_ALMACEN) {
         this.numeroEnvio = contador++;
         this.cliente = cliente;
         this.paquete = paquete;

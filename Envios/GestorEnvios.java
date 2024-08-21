@@ -29,15 +29,19 @@ public class GestorEnvios {
     }
 
     public void registrarEnvio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega) {
-        Envio envio = new Envio(cliente, paquete, ruta, fechaEnvio, fechaEntrega);
+        int ultimoNumeroEnvio = 0;
+        double precio = 2100;
+        Envio envio = new Envio(++ultimoNumeroEnvio, cliente, paquete, ruta, fechaEnvio, fechaEntrega, precio, EstadoEnvio.EN_ALMACEN);
         colaEnvios.add(envio);
         System.out.println("Envío registrado con éxito");
     }
 
-    public void buscarEnvio(int numeroEnvio) {
-        for (Envio envio : colaEnvios) {
-            if (envio.getNumeroEnvio()== numeroEnvio) {
-}
+   public Envio buscarEnvio(int numeroEnvio) {
+    for (Envio envio : colaEnvios) {
+        if (envio.getNumeroEnvio() == numeroEnvio) {
+            return envio; // Devuelve el envío si coincide el número
         }
     }
+    return null; // Si no se encuentra el envío, devuelve null
+}
 }

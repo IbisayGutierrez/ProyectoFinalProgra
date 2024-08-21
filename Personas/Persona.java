@@ -48,6 +48,9 @@ public abstract class Persona {
         this.correo = correo;
     }
 
+
+    
+
     public Persona(String id, String nombre, LocalDate fechaNacimiento, String telefono, String correo) {
         this.id = id;
         this.nombre = nombre;
