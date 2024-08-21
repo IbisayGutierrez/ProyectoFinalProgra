@@ -30,6 +30,15 @@ public class RutaEntrega {
         return descripcion;
     }
 
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public static void setRutas(ArrayList<RutaEntrega> rutas) {
+        RutaEntrega.rutas = rutas;
+    }
+
+    
     public double getDistancia() {
         return distancia;
     }

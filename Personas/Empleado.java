@@ -23,6 +23,15 @@ public class Empleado extends Persona {
     public double getSalario() {
         return puestoEmpleado.getSalario();
     }
+
+    public void setPuesto(String puesto) {
+        this.puesto = puesto;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+    
    
 
     public void setPuestoEmpleado(puestoEmpleado puestoEmpleado) {
