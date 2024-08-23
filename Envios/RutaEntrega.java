@@ -1,11 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Envios;
 
-import java.util.ArrayList;
-
+import java.util.HashSet;
 
 /**
  *
@@ -13,17 +8,17 @@ import java.util.ArrayList;
  */
 public class RutaEntrega {
     private String codigo;
-    private String Nombre;
-     private String descripcion;
+    private String nombre;
+    private String descripcion;
     private double distancia;
-    private static ArrayList<RutaEntrega> rutas = new ArrayList<>();
+    private static HashSet<String> destinos = new HashSet<>();
             
     public String getCodigo() {
         return codigo;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public String getDescripcion() {
@@ -34,18 +29,17 @@ public class RutaEntrega {
         this.descripcion = descripcion;
     }
 
-    public static void setRutas(ArrayList<RutaEntrega> rutas) {
-        RutaEntrega.rutas = rutas;
+    public static void setDestinos(HashSet<String> destinos) {
+        RutaEntrega.destinos = destinos;
     }
 
-    
     public double getDistancia() {
         return distancia;
     }
 
-    public RutaEntrega(String codigo, String Nombre, String descripcion, double distancia) {
+    public RutaEntrega(String codigo, String nombre, String descripcion, double distancia) {
         this.codigo = codigo;
-        this.Nombre = Nombre;
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.distancia = distancia;
     }
@@ -54,31 +48,46 @@ public class RutaEntrega {
         this("","","",0);
     }
     
-     public static void agregarRuta(RutaEntrega ruta) {
-        rutas.add(ruta);
-        System.out.println("Ruta agregada con éxito");
+    public static void agregarRuta(String ruta) {
+        if (destinos.add(ruta)) {
+            System.out.println("Ruta agregada con éxito");
+        } else {
+            System.out.println("La ruta ya existe y no se puede agregar");
+        }
     }
 
     public static void eliminarRuta(String codigo) {
-        for (RutaEntrega ruta : rutas) {
-            if (ruta.getCodigo().equals(codigo)) {
-                rutas.remove(ruta);
-                System.out.println("Ruta eliminada con éxito");
-                return;
+        String rutaAEliminar = null;
+        for (String ruta : destinos) {
+            if (ruta.equals(codigo)) {
+                rutaAEliminar = ruta;
+                break;
             }
         }
-        System.out.println("Ruta no encontrada");
+        if (rutaAEliminar != null) {
+            destinos.remove(rutaAEliminar);
+            System.out.println("Ruta eliminada con éxito");
+        } else {
+            System.out.println("Ruta no encontrada");
+        }
     }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDistancia(double distancia) {
+        this.distancia = distancia;
+    }
+    
+    
 
     @Override
     public String toString() {
-        return "RutaEntrega{" + "codigo=" + codigo + ", Nombre=" + Nombre + ", descripcion=" + descripcion + ", distancia=" + distancia + '}';
+        return "RutaEntrega{" + "codigo=" + codigo + ", nombre=" + nombre + ", descripcion=" + descripcion + ", distancia=" + distancia + '}';
     }
-    
-
-    
-    
-    
 }
-
-

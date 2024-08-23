@@ -42,6 +42,32 @@ public class Paquete {
         return estado;
     }
 
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public void setRemitente(String remitente) {
+        this.remitente = remitente;
+    }
+
+    public void setDestinatario(String destinatario) {
+        this.destinatario = destinatario;
+    }
+
+    public void setEstado(EstadoPaquete estado) {
+        this.estado = estado;
+    }
+    
+    
+
     public Paquete(String codigo, String descripcion, double peso, String remitente, String destinatario, EstadoPaquete estado) {
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -62,3 +88,4 @@ public class Paquete {
     
     
 }
+

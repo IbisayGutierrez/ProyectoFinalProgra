@@ -8,13 +8,13 @@ import Paquetes.Paquete;
 import Personas.Cliente;
 import java.time.LocalDate;
 
-
 /**
  *
  * @author andre
  */
 public class Envio {
-   private static int contador = 0;
+
+    private static int contador = 0;
     private int numeroEnvio;
     private Cliente cliente;
     private Paquete paquete;
@@ -63,9 +63,8 @@ public class Envio {
     public void setEstado(EstadoEnvio estado) {
         this.estado = estado;
     }
-    
 
-    public Envio(int par, Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega, double precio1, EstadoEnvio EN_ALMACEN) {
+    public Envio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega, EstadoEnvio EN_ALMACEN) {
         this.numeroEnvio = contador++;
         this.cliente = cliente;
         this.paquete = paquete;
@@ -111,14 +110,41 @@ public class Envio {
         }
     }
 
-
     @Override
     public String toString() {
         return "Envio{" + "numeroEnvio=" + numeroEnvio + ", cliente=" + cliente + ", ruta=" + ruta + ", fechaEnvio=" + fechaEnvio + ", fechaEntrega=" + fechaEntrega + ", precio=" + precio + ", estado=" + estado + '}';
     }
-    
-    
-    
-    
-    
+
+    public static void setContador(int contador) {
+        Envio.contador = contador;
+    }
+
+    public void setNumeroEnvio(int numeroEnvio) {
+        this.numeroEnvio = numeroEnvio;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setPaquete(Paquete paquete) {
+        this.paquete = paquete;
+    }
+
+    public void setRuta(RutaEntrega ruta) {
+        this.ruta = ruta;
+    }
+
+    public void setFechaEnvio(LocalDate fechaEnvio) {
+        this.fechaEnvio = fechaEnvio;
+    }
+
+    public void setFechaEntrega(LocalDate fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
 }

@@ -6,6 +6,7 @@ package Sistemas;
 
 import Personas.Empleado;
 import Personas.puestoEmpleado;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class AdminEmpleados {
@@ -28,16 +29,7 @@ public class AdminEmpleados {
         return null;
     }
 
-   public void actualizarEmpleado(String id, String nuevoTelefono, String nuevoCorreo, String nuevoPuesto, double nuevoSalario) {
-    Empleado empleado = buscarEmpleado(id);
-    if (empleado != null) {
-        empleado.setTelefono(nuevoTelefono);
-        empleado.setCorreo(nuevoCorreo);
-        empleado.setPuesto(new puestoEmpleado(puestoEmpleado, puestoEmpleado));
-        
-        
-    }
-}
+  
 
     public void eliminarEmpleado(String id) {
         Empleado empleado = buscarEmpleado(id);
@@ -49,5 +41,20 @@ public class AdminEmpleados {
     public ArrayList<Empleado> getEmpleados() {
         return empleados;
     }
+    
+     public boolean actualizarEmpleado(String id, String nuevoNombre, LocalDate nuevaFechaNacimiento, String nuevoTelefono, String nuevoCorreo, puestoEmpleado nuevoPuesto) {
+        Empleado empleado = buscarEmpleado(id);
+        if (empleado != null) {
+            empleado.setNombre(nuevoNombre);
+            empleado.setFechaNacimiento(nuevaFechaNacimiento);
+            empleado.setTelefono(nuevoTelefono);
+            empleado.setCorreo(nuevoCorreo);
+            empleado.setPuestoEmpleado(nuevoPuesto);
+            return true;
+        }
+        return false;
+    }
 }
+
+
 
